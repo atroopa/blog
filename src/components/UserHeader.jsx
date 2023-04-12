@@ -17,8 +17,8 @@ export class UserHeader extends Component {
         }
 
         return (
-        <div>
-           {user.name}
+        <div className='font-bold'>
+           &mdash; {user.name}
         </div>
         )
   }
