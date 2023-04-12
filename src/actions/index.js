@@ -13,6 +13,12 @@ export const fetchPosts = () => async (dispatch, getState) => {
 
 export const fetchUser = id => async dispatch => {
 
+    _fetcUser(id, dispatch);
+
+}
+
+const _fetcUser = _.memoize(async (id, dispatch) => {
+
     const response = await jsonPlaceHolder.get(`./users/${id}`);
 
     dispatch({
@@ -20,5 +26,4 @@ export const fetchUser = id => async dispatch => {
         payload: response.data
     });
 
-}
-
+});
