@@ -1,13 +1,12 @@
 import jsonPlaceHolder from '../apis/jsonPlaceHolder';
 
 
-export const fetchPosts = (dispatch, getState) => {
-    return function () {
-        const response =  jsonPlaceHolder.get('/posts');
+export const fetchPosts = () => async (dispatch, getState) => {
 
-        return {
+        const response = await jsonPlaceHolder.get('/posts');
+
+        dispatch({
             type: 'FETCH_POSTS',
-            payload: response
-        };
-    }
+            payload: response.data
+        });
 }
