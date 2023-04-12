@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { fetchPosts } from "../actions";
+import UserHeader from './UserHeader';
 
 
 class PostList extends Component {
@@ -27,6 +28,9 @@ class PostList extends Component {
                   <p className="mb-6">
                       {post.body}
                   </p>
+                  <div>
+                    <UserHeader userId={post.userId} />
+                  </div>
                 </section>
                 {/* Section: Design Block */}
               </div>
